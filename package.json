@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "myexpress": "^2.0.0",
+    "mysql": "^2.18.1",
     "next": "12.2.5",
+    "nodemon": "^2.0.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-google-charts": "^4.0.0",
