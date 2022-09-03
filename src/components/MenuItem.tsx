@@ -7,13 +7,13 @@ interface MenuItemProps{
 
 export default function MenuItem(props: MenuItemProps){
     return (
-        <li className={` cursor-pointer pt-5 hover:text-gray-600`}>
+        <div className={`flex flex-col w-full h-10 items-center cursor-pointer mt-4 hover:text-white hover:shadow-md hover:rounded-md text-black`}>
             <a onClick={props.onClick}  className={`
-                       w-full
+                       h-full w-full text-center
                     `}>                  
                     {props.name}                 
             </a>
-        </li>
+        </div>
 
     )
 }
