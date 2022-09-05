@@ -3,7 +3,6 @@ import Axios from "axios";
 import Graphics from "./Graphics";
 import SideBar from "./SideBar";
 import Table from "./Table";
-import Link from 'next/link'
 
 export default function Layout(){
     const [show, setShow] = useState ('1')
@@ -23,8 +22,9 @@ export default function Layout(){
         name: values.name,
         valor: values.valor,
         codigo: values.codigo
-      }).then((err)=>{
-        
+      }).then((err,result)=>{
+        if(err) return console.log('erro')
+        else return console.log(`sucess`)
       }) 
       return setShow2('4')
     }
