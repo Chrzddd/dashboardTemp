@@ -3,7 +3,6 @@ import Axios from "axios";
 import Graphics from "./Graphics";
 import SideBar from "./SideBar";
 import Table from "./Table";
-import { url } from "inspector";
 
 
 export default function Layout(){
@@ -68,8 +67,10 @@ export default function Layout(){
                     change2={() => setShow('2')}
                 />
                              {show === `1` ? 
-                                <div className="flex flex-col w-full h-full justify-center ">
-                                    <Graphics></Graphics>
+                                <div className="flex flex-col w-full h-full justify-center items-center">
+                                    <div className={`flex flex-col w-4/5 justify-center h-full`}>
+                                        <Graphics></Graphics>
+                                    </div>
                                 </div>
                                 :  (show2===`2`? renderizarCadastro() : 
                                 <div className="flex flex-col w-full h-full justify-center items-center">
