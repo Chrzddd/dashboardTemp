@@ -36,7 +36,7 @@ export default function Layout(){
                                             name="name" 
                                             placeholder="name" 
                                             onChange={handleChangeValues}
-                                            className={`bg-gray-200 w-96 shadow-lg rounded-md`}
+                                            className={`bg-gray-200 w-96 shadow-lg rounded-md focus:bg-white h-8`}
                                         />
                                     <label htmlFor="valor">Preco: </label>
                                         <input 
@@ -44,7 +44,7 @@ export default function Layout(){
                                             name="valor"
                                             placeholder="valor" 
                                             onChange={handleChangeValues}
-                                            className={`bg-gray-200  shadow-lg w-96 rounded-md`}
+                                            className={`bg-gray-200  shadow-lg w-96 rounded-md focus:bg-white h-8`}
                                         />
                                     <label htmlFor="codigo">Codigo: </label>
                                         <input 
@@ -52,9 +52,9 @@ export default function Layout(){
                                             name="codigo" 
                                             placeholder="codigo" 
                                             onChange={handleChangeValues}
-                                            className={`bg-gray-200  shadow-lg w-96 rounded-md`}
+                                            className={`bg-gray-200  shadow-lg w-96 rounded-md focus:bg-white h-8`}
                                         />
-                                    <a onClick={()=>setShow2('4')} ><button className={`bg-gray-500 w-44 h-10 rounded-md mt-5`} onClick={handleSubmit} >Adicionar</button></a>
+                                    <a onClick={()=>setShow2('4')} href="/"><button className={`bg-gray-500 w-44 h-10 rounded-md mt-5 text-white hover:text-black hover:shadow-xl`} onClick={handleSubmit} >Adicionar</button></a>
                                 </div>
         )
     }
@@ -73,9 +73,10 @@ export default function Layout(){
                                 </div>
                                 :  (show2===`2`? renderizarCadastro() : 
                                 <div className="flex flex-col w-full h-full justify-center items-center">
-                                    
-                                    <Table></Table>
-                                    <button className="text-black mt-5 bg-gray-500 w-44 h-10 rounded-md" onClick={()=>setShow2(`2`)}>Cadastrar</button>
+                                    <div className={`flex flex-col  h-4/5 overflow-auto items-center w-full rounded-md `}>
+                                        <Table></Table>
+                                    </div>
+                                    <button className=" mt-5 bg-gray-500 w-44 h-10 rounded-md text-white hover:text-black hover:shadow-xl" onClick={()=>setShow2(`2`)}>Cadastrar</button>
                                 </div>
                                 
                                 )                       
