@@ -25,15 +25,15 @@ export default function Table(){
                     <th className="p-2 ">Ações</th>
                 </tr>
             </thead>      
-            <tbody className="text-sm divide-y divide-gray-350 text-center text-black">
+            <tbody className="text-sm divide-y divide-gray-350 text-center text-black justify-center">
             {typeof listGames !== "undefined" && listGames.map((value)=>{
                 return (
-                <tr className={`${(value.ID%2) === 0 ?"":"bg-gray-50"} hover:bg-gray-300 `}key={value.ID}>
+                <tr className={`${(value.ID%2) === 0 ?"":"bg-gray-50"} hover:bg-gray-300 items-center justify-center`}key={value.ID}>
                     <td className="p-2 ">{value.ID}</td>
                     <td className="p-2 ">{value.Nome}</td>
                     <td className="p-2">R$:{value.Preço}</td>
                     <td className="p-2">{value.Codigo}</td>     
-                    <td className="p-2 flex justify-center">
+                    <td className="p-2 flex justify-center items-center">
                         <button className="mr-3">{deleteIcon}</button >
                         <button className="mr-3">{updateIcon}</button >
 

@@ -3,7 +3,7 @@ import Axios from "axios";
 import Graphics from "./Graphics";
 import SideBar from "./SideBar";
 import Table from "./Table";
-
+import Link from 'next/link'
 
 export default function Layout(){
     const [show, setShow] = useState ('1')
@@ -24,7 +24,9 @@ export default function Layout(){
         valor: values.valor,
         codigo: values.codigo
       }).then((err)=>{
+        
       }) 
+      return setShow2('4')
     }
     function renderizarCadastro(){
         return (
@@ -53,7 +55,7 @@ export default function Layout(){
                                             onChange={handleChangeValues}
                                             className={`bg-gray-200  shadow-lg w-96 rounded-md focus:bg-white h-8`}
                                         />
-                                    <a onClick={()=>setShow2('4')} href="/"><button className={`bg-gray-500 w-44 h-10 rounded-md mt-5 text-white hover:text-black hover:shadow-xl`} onClick={handleSubmit} >Adicionar</button></a>
+                                    <button className={`bg-gray-500 w-44 h-10 rounded-md mt-5 text-white hover:text-black hover:shadow-xl`} onClick={handleSubmit} >Adicionar</button>
                                 </div>
         )
     }
