@@ -10,13 +10,13 @@ export default function Layout(){
     const [show2, setShow2] = useState('4')
     const [values, setValues] = useState(``);
 
-
+    
     const handleChangeValues = (value) =>{
+        
         setValues(prevValue=>({
           ...prevValue,
-          [value.target.name]: value.target.value,
-          
-        }));       
+          [value.target.name]: value.target.value,     
+        }));      
     }
     const handleSubmit = () =>{
         Axios.post("http://localhost:4001/register",{
