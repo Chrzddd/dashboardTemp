@@ -10,14 +10,15 @@ interface SideBarProps{
 }
 export default function SideBar(props: SideBarProps){
     return (
-        <aside className={`flex flex-col bg-gray-500 w-1/6 h-full justify-center shadow-xl `}>
+        <aside className={`flex flex-col bg-gray-500 w-1/4 sm:w-1/6 h-full justify-center shadow-xl `}>
             <div className="flex flex-row w-full justify-center items-center h-full ">
-                
-                <Stack onClick={()=>console.log('ola')}direction="row" spacing={2}>      
-                    <Avatar src="/broken-image.jpg" 
-                        sx={{ width: 70, height: 70 }}
-                    />
-                </Stack>
+                <div className={'flex flex-row justify-center'}>
+                    <Stack onClick={()=>console.log('ola')}direction="row" spacing={2}>      
+                        <Avatar src="/broken-image.jpg" 
+                            sx={{ width: 70, height: 70, cursor:'pointer'}}
+                        />
+                    </Stack>
+                </div>
             </div>
             <ul className={`flex flex-col w-full h-15 items-center h-full`}>
                 <MenuItem startIcon={graphIcon} onClick={props.change1} name="Gráfico de Vendas" ></MenuItem>
