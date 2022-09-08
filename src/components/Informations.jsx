@@ -23,7 +23,7 @@ export default function Informations(props){
                     id={props.id}
                     >
             </DialogForm>      
-            <tr className={`${(props.id%2) === 0 ?"":"bg-gray-50"} hover:bg-gray-300 items-center justify-center `}key={props.id}>
+            <tr className={`${(props.id%2) === 0 ?"":"bg-gray-50"} hover:bg-gray-300 items-center  `}key={props.id}>
             <td className="p-2 ">{props.nome}</td>
             <td className="p-2">R$:{props.preço}</td>
             <td className="p-2">{props.codigo}</td>     

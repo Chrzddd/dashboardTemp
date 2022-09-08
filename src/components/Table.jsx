@@ -32,7 +32,7 @@ export default function Table(){
                     </tr>
                 </thead>      
                 <>            
-                <tbody className=" text-sm divide-y divide-gray-350 text-black justify-center text-center break-all ">
+                <tbody className=" text-sm divide-y divide-gray-350 text-black  text-center break-all ">
                     
                     {typeof listGames !== "undefined" && listGames.map((value)=>{
                         return (             
