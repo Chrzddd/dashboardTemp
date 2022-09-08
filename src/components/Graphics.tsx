@@ -32,6 +32,8 @@ export default function Graphics(props:GraphicsProps){
         hAxis: { title: `Em: ${date.getDate() >= 10 ? date.getDate() : '0'+date.getDate()} / ${date.getMonth()+1 >= 10 ? date.getMonth()+1 : '0'+date.getMonth()} / ${date.getFullYear()}`, titleTextStyle: { color: "#444" } },
         vAxis: { minValue: 0 },
         chartArea: { width: "55%", height: "80%" },
+        colors: ["red", "#2596be", '#071e26'],
+        
       };
 
     return (
