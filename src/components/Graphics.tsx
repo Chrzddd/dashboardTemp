@@ -1,10 +1,8 @@
 import { Chart } from "react-google-charts";
 import { useState, useEffect } from "react";
 import Axios from "axios"
-interface GraphicsProps {
-    
-}
-export default function Graphics(props:GraphicsProps){
+
+export default function Graphics(){
 
     const [estoque, setEstoque] = useState()
     useEffect(()=>{
@@ -19,11 +17,11 @@ export default function Graphics(props:GraphicsProps){
     var date = new Date;
     const data = [
         ["Mês", "Estoque", "Vendas", 'Lucro'],
-        [`Janeiro`, estoque, 800, 30],
-        [`Fevereiro`, estoque, 400, 30],
-        [`Março`, estoque, 400, 30],
-        [`Abril`, estoque, 400, 30],
-        [`Maio`, estoque, 400, 30],
+        [`Janeiro`, estoque, 40, 30],
+        [`Fevereiro`, estoque, 38, 30],
+        [`Março`, estoque, 25, 30],
+        [`Abril`, estoque, 32, 30],
+        [`Maio`, estoque, 22, 30],
         
       ];
 
