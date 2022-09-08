@@ -94,7 +94,7 @@ export default function Layout(){
                     </Dialog>
                 </div>
                              {show === `1` ? 
-                                <div className="flex flex-col w-full h-full justify-center items-center">
+                                <div className="a flex flex-col w-full h-full justify-center items-center">
                                     <div className={`flex flex-col sm:w-4/5 w-5/6 justify-center h-full`}>
                                         <Graphics></Graphics>
                                     </div>
