@@ -1,17 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import Axios from "axios";
 import Graphics from "./Graphics";
 import SideBar from "./SideBar";
 import Table from "./Table";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
+import {sendIcon, xIcon} from "./icons/Icons"
+import Alert from '@mui/material/Alert';
 
 export default function Layout(){
     const [show, setShow] = useState ('1')
-    const [show2, setShow2] = useState('4')
     const [values, setValues] = useState(``);
-
+    const [open, setOpen] = useState(false);
     
-    const handleChangeValues = (value) =>{
-        
+    const handleChangeValues = (value) =>{      
         setValues(prevValue=>({
           ...prevValue,
           [value.target.name]: value.target.value,     
@@ -22,45 +28,20 @@ export default function Layout(){
         name: values.name,
         valor: values.valor,
         codigo: values.codigo
-      }).then((err,result)=>{
-        if(err) return console.log('erro')
-        else return console.log(`sucess`)
-      }) 
-      return setShow2('4')
+      }).then((result)=>{
+        
+      })
+      
+      setOpen(false)  
+      
     }
-    function renderizarCadastro(){
-        return (
-            <div className={`flex flex-col justify-center items-center text-black w-full`}>
-                                    <label htmlFor="name">Nome: </label>
-                                        <input 
-                                            type="text" 
-                                            name="name" 
-                                            placeholder="name" 
-                                            onChange={handleChangeValues}
-                                            className={`bg-gray-200 w-96 shadow-lg rounded-md focus:bg-white h-8`}
-                                        />
-                                    <label htmlFor="valor">Preco: </label>
-                                        <input 
-                                            type="tel" 
-                                            name="valor"
-                                            placeholder="valor" 
-                                            onChange={handleChangeValues}
-                                            className={`bg-gray-200  shadow-lg w-96 rounded-md focus:bg-white h-8`}
-                                        />
-                                    <label htmlFor="codigo">Codigo: </label>
-                                        <input 
-                                            type="tel" 
-                                            name="codigo" 
-                                            placeholder="codigo" 
-                                            onChange={handleChangeValues}
-                                            className={`bg-gray-200  shadow-lg w-96 rounded-md focus:bg-white h-8`}
-                                        />
-                                    <button className={`bg-gray-500 w-44 h-10 rounded-md mt-5 text-white hover:text-black hover:shadow-xl`} onClick={handleSubmit} >Adicionar</button>
-                                </div>
-        )
-    }
+    const handleClickOpen = () => {
+        setOpen(true);
+      };
     
-
+      const handleClose = () => {
+        setOpen(false);
+      };
     return (
         <div className="bg-white">
             <div className={`flex h-screen w-screen`}>             
@@ -68,21 +49,63 @@ export default function Layout(){
                     change1={() => setShow('1')}
                     change2={() => setShow('2')}
                 />
+                <div>          
+                    <Dialog open={open} >
+                        <DialogTitle>Cadastrar Produto</DialogTitle>
+                        <DialogContent>
+                        <TextField
+                            autoFocus
+                            margin="dense"
+                            id="name"
+                            name="name"
+                            label="Nome do Produto"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                            onChange={handleChangeValues}
+                        />
+                        <TextField
+                            autoFocus
+                            margin="dense"
+                            id="valor"
+                            name="valor"
+                            label="Valor do Produto"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                            onChange={handleChangeValues}
+                        />
+                        <TextField
+                            autoFocus
+                            margin="dense"
+                            id="codigo"
+                            label="Codigo do Produto"
+                            name="codigo"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                            onChange={handleChangeValues}
+                        />
+                        </DialogContent>
+                        <DialogActions>
+                            <Button  variant="outlined" startIcon={xIcon} color="error"onClick={handleClose}>Cancel</Button>
+                            <Button  variant="outlined" endIcon={sendIcon} color="success"onClick={handleSubmit}>Cadastrar</Button>
+                        </DialogActions>
+                    </Dialog>
+                </div>
                              {show === `1` ? 
                                 <div className="flex flex-col w-full h-full justify-center items-center">
-                                    <div className={`flex flex-col w-4/5 justify-center h-full`}>
+                                    <div className={`flex flex-col sm:w-4/5 w-5/6 justify-center h-full`}>
                                         <Graphics></Graphics>
                                     </div>
                                 </div>
-                                :  (show2===`2`? renderizarCadastro() : 
+                                :  
                                 <div className="flex flex-col w-full h-full justify-center items-center">
                                     <div className={`flex flex-col  h-4/5 overflow-auto items-center w-full rounded-md `}>
                                         <Table></Table>
                                     </div>
-                                    <button className=" mt-5 bg-gray-500 w-44 h-10 rounded-md text-white hover:text-black hover:shadow-xl" onClick={()=>setShow2(`2`)}>Cadastrar</button>
-                                </div>
-                                
-                                )                       
+                                    <button className=" mt-5 bg-gray-500 w-44 h-10 rounded-md text-white hover:text-black hover:shadow-xl" onClick={()=>setOpen(true)}>Cadastrar</button>
+                                </div>                                
                             }
                             
                     </div>

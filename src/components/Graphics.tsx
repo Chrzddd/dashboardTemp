@@ -18,12 +18,12 @@ export default function Graphics(props:GraphicsProps){
     
     var date = new Date;
     const data = [
-        ["Mês", "Produtos em Estoque", "Vendas"],
-        [(date.getFullYear()).toString(), estoque, 800],
-        [(date.getFullYear()).toString(), estoque, 400],
-        [(date.getFullYear()).toString(), estoque, 400],
-        [(date.getFullYear()).toString(), estoque, 400],
-        [(date.getFullYear()).toString(), estoque, 400],
+        ["Mês", "Estoque", "Vendas", 'Lucro'],
+        [(date.getFullYear()).toString(), estoque, 800, 30],
+        [(date.getFullYear()).toString(), estoque, 400, 30],
+        [(date.getFullYear()).toString(), estoque, 400, 30],
+        [(date.getFullYear()).toString(), estoque, 400, 30],
+        [(date.getFullYear()).toString(), estoque, 400, 30],
         
       ];
 

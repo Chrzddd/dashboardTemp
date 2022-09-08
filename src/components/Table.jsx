@@ -21,30 +21,28 @@ export default function Table(){
       },[])
       
     return (
-            <>
-
-            <table className="table-fixed w-10/12   items-center rounded-md shadow-lg  h-3/5 overflow-y-scroll">
-                <thead className="text-xs font-semibold uppercase h-10 text-gray-50 bg-gray-700 rounded-sm">
+    
+            <table className="table-fixed  w-10/12   items-center rounded-md shadow-lg  h-4/5 overflow-y-scroll">
+                <thead className="text-xs font-semibold uppercase h-10 text-gray-50 bg-gray-700 rounded-sm text-center">
                     <tr>
-                        <th className="p-2">ID</th>
                         <th className="p-2">Produto</th>
                         <th className="p-2">Preço</th>
                         <th className="p-2">Codigo</th>
                         <th className="p-2 ">Ações</th>
                     </tr>
                 </thead>      
-                <tbody className="text-sm divide-y divide-gray-350 text-black justify-center text-center break-all">
-            
-
-                {typeof listGames !== "undefined" && listGames.map((value)=>{
-                    return (             
-                    <Informations id={value.ID} nome={value.Nome} preço={value.Preço} codigo={value.Codigo} key={value.ID}>            
-                    </Informations>
-                )  
-                })}
-
+                <>            
+                <tbody className=" text-sm divide-y divide-gray-350 text-black justify-center text-center break-all ">
+                    
+                    {typeof listGames !== "undefined" && listGames.map((value)=>{
+                        return (             
+                        <Informations id={value.ID} nome={value.Nome} preço={value.Preço} codigo={value.Codigo} key={value.ID}>            
+                        </Informations>
+                    )  
+                    })}
                 </tbody>
+                </>
             </table>
-    </>
+    
     )
 }
