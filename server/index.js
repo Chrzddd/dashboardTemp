@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mysql = require("mysql");
 const cors = require("cors");
-
+require('body-parser');
 
 const db = mysql.createPool({
     host:"localhost",
@@ -61,6 +61,21 @@ app.delete("/delete/:id",(req,res)=>{
         else res.send(result)
     })
 })
+app.post("/login",(req,res)=>{
+    const {email} = req.body
+    const {password} = req.body
+    let SQL = 'SELECT * FROM accounts WHERE user = ? AND password = ?'
+    
+    db.query(SQL, [email,password], (err,result)=>{
+        if (result.length>0){
+            res.send(console.log('logad com sucesso'))
+            
+        }else {
+            res.send(console.log('falha ao logar'))
+        }
+    })
+})
 app.listen(4001, ()=>{
     console.log("rodando servidor");
 })
+
