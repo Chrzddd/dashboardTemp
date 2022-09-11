@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import {deleteIcon, updateIcon} from "./icons/Icons"
-import DialogForm from "./DialogForm"
 import Informations from "./Informations"
 export default function Table(){
 

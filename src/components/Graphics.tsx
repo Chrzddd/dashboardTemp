@@ -31,6 +31,7 @@ export default function Graphics(){
         vAxis: { minValue: 0 },
         chartArea: { width: "55%", height: "80%" },
         colors: ["red", "#2596be", '#071e26'],
+        legend:'hello'
         
       };
 

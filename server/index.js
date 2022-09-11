@@ -5,7 +5,7 @@ const cors = require("cors");
 
 
 
-
+app.use(cors())
 const db = mysql.createPool({
     host:"localhost",
     user:"root",
@@ -13,7 +13,6 @@ const db = mysql.createPool({
     database:"crudnew"
 });
 
-app.use(cors());
 app.use(express.json());
 
 app.post("/register", (req,res)=>{
@@ -70,10 +69,10 @@ app.post("/login",(req,res)=>{
     
     db.query(SQL, [email,password], (err,result)=>{
         if (result.length>0){
-            return (res.send(console.log('login com sucesso')))
+            return res.send(true)
             
-        }else{
-            return res.send(console.log('falha ao logar'))
+        }else {
+            return res.send(false)
         }
     })
 })

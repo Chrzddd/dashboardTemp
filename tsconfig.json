@@ -102,7 +102,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/components/Table.jsx", "src/components/Layout.jsx", "src/components/Graphics.jsx"  ],
+, "src/components/Table.jsx", "src/components/Layout.jsx", "src/components/Graphics.jsx", "src/pages/api/hello.js", "server/index.js"  ],
   "exclude": [
     "node_modules"
   ]

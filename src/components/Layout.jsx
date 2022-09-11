@@ -10,7 +10,6 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import {sendIcon, xIcon} from "./icons/Icons"
-import Alert from '@mui/material/Alert';
 
 export default function Layout(){
     const [show, setShow] = useState ('1')
